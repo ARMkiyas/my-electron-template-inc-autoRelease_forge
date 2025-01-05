@@ -1,7 +1,7 @@
 {
   "name": "my-electron-template-inc-autorelease_forge",
   "productName": "my-electron-template-inc-autorelease_forge",
-  "version": "1.0.3",
+  "version": "1.0.0",
   "description": "My Electron application description",
   "main": ".vite/build/main.js",
   "scripts": {

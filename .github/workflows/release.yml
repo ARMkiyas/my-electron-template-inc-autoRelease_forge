@@ -104,6 +104,8 @@ jobs:
         with:
           node-version: 20
           cache: "npm"
+      - name: versioning pacakge
+        run: npm version ${{ needs.draft.outputs.version }}
 
       - run: npm install
         env:
@@ -131,7 +133,7 @@ jobs:
       - name: Compile & release Electron app
         id: release-to-github
         env:
-          VITE_APP_VERSION: ${{ needs.draft.outputs.version }}
+          APP_VERSION: ${{ needs.draft.outputs.version }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run publish
       - name: Delete tag for failed release

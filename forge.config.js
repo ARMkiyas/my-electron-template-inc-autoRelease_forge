@@ -2,14 +2,14 @@ const { FusesPlugin } = require("@electron-forge/plugin-fuses");
 const { FuseV1Options, FuseVersion } = require("@electron/fuses");
 const { version } = require("./package.json");
 
-if (process.env.VITE_APP_VERSION === undefined) {
-  process.env.VITE_APP_VERSION = version;
+if (process.env.APP_VERSION === undefined) {
+  process.env.APP_VERSION = version;
 }
 
 module.exports = {
   packagerConfig: {
     name: "my-electron-template-inc-autoRelease_forge",
-    appVersion: process.env.VITE_APP_VERSION,
+    appVersion: process.env.APP_VERSION,
     extraResource: ["./Resources"],
     executableName: "my_electron_template_inc_autoRelease_forge",
     asar: true,
