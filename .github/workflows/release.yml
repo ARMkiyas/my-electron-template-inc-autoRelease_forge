@@ -19,7 +19,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 20
-      - run: npm ci
+      - run: npm install --production
         env:
           PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: 1
       - run: npx semantic-release --dry-run
@@ -94,7 +94,7 @@ jobs:
           node-version: 20
           cache: "npm"
 
-      - run: npm ci
+      - run: npm install --production
         env:
           PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: 1
 
