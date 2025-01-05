@@ -106,7 +106,7 @@ jobs:
           node-version: 20
           cache: "npm"
 
-      - run: npm install --production
+      - run: npm install
         env:
           PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: 1
 
