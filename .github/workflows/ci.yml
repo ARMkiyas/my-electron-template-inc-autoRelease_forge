@@ -30,6 +30,11 @@ jobs:
   # tests:
   #   uses: ./.github/workflows/tests.yml
   draft_release:
+    permissions:
+      contents: write # to be able to publish a GitHub release
+      issues: write # to be able to comment on released issues
+      pull-requests: write # to be able to comment on released pull requests
+      id-token: write # to enable use of OIDC for npm provenance
     if: github.event_name == 'push' && (github.ref_name == 'alpha' || github.ref_name == 'beta' || github.ref_name == 'main')
     # needs: [typechecking, tests]
     uses: ./.github/workflows/release.yml
