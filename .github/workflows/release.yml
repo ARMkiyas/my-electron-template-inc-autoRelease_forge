@@ -91,7 +91,6 @@ jobs:
     strategy:
       matrix:
         os: [macos-latest, ubuntu-latest, windows-latest]
-
     runs-on: ${{ matrix.os }}
     permissions:
       contents: write # to be able to publish a GitHub release
