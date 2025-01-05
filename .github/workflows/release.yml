@@ -132,8 +132,8 @@ jobs:
         id: release-to-github
         env:
           VITE_APP_VERSION: ${{ needs.draft.outputs.version }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run publish
-
       - name: Delete tag for failed release
         if: steps.release-to-github.outcome == 'failure'
         run: git push --delete origin v${{ needs.draft.outputs.version }}```
