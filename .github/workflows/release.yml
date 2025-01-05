@@ -105,7 +105,10 @@ jobs:
           node-version: 20
           cache: "npm"
       - name: Bump Version of package.json
+        env:
+          APP_VERSION: ${{ needs.draft.outputs.version }}
         run: node ./.github/scripts/bump-version.js
+
       - run: npm install
         env:
           PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: 1
