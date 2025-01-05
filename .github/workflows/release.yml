@@ -104,6 +104,8 @@ jobs:
         with:
           node-version: 20
           cache: "npm"
+      - name: versioning pacakge
+        run: npm version ${{ needs.draft.outputs.version }}
 
       - run: npm install
         env:
