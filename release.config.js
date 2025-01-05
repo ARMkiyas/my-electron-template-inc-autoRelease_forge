@@ -9,12 +9,12 @@ module.exports = {
   plugins: [
     "@semantic-release/commit-analyzer",
     "semantic-release-export-data",
-    "@semantic-release/npm",
     [
-      "@semantic-release/git",
+      "@semantic-release/github",
       {
         assets: ["package.json", "package-lock.json"],
       },
+      "@semantic-release/git",
     ],
   ],
 };
