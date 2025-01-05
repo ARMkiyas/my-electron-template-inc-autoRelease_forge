@@ -9,7 +9,7 @@ module.exports = {
   plugins: [
     "@semantic-release/commit-analyzer",
     "semantic-release-export-data",
-    "@semantic-release/github",
+    // "@semantic-release/github",
     // [
     //   "@semantic-release/github",
     //   {
