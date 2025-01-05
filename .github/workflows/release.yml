@@ -100,19 +100,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - run: git config --global user.email ${{secrets.EMAIL}}
-      - run: git config --global user.name "arm.kiyas"
       - uses: actions/setup-node@v3
         with:
           node-version: 20
           cache: "npm"
-      - name: versioning pacakge
-        run: npm version ${{ needs.draft.outputs.version }}
-
+      - name: Bump Version of package.json
+        run: node ./.github/scripts/bump-version.js
       - run: npm install
         env:
           PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: 1
-
       - name: Prepare release notes
         env:
           RELEASE_NOTE: ${{ needs.draft.outputs.release-note }}
