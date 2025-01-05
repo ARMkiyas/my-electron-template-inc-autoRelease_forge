@@ -11,6 +11,7 @@ module.exports = {
     name: "my-electron-template-inc-autoRelease_forge",
     appVersion: process.env.VITE_APP_VERSION,
     extraResource: ["./Resources"],
+    executableName: "my_electron_template_inc_autoRelease_forge",
     asar: true,
   },
   rebuildConfig: {},
