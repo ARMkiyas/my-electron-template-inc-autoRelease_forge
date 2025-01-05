@@ -14,7 +14,12 @@ module.exports = {
       {
         assets: ["package.json", "package-lock.json"],
       },
+    ],
+    [
       "@semantic-release/git",
+      {
+        assets: ["package.json", "package-lock.json"],
+      },
     ],
   ],
 };
